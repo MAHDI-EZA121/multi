@@ -33,4 +33,9 @@
     color: #fff;
     border: none;
 }
+.headerBG{
+    background-image: url("img/header.jpg");
+
+}
+
 

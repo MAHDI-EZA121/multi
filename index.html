@@ -7,12 +7,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- لینک به فایل CSS جداگانه -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="StyleCSS.css">
 </head>
 <body>
 
 <!-- سکشن منو -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+<nav class="fixed-top navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
     <div class="container">
         <a class="navbar-brand fw-bold" href="#">MULTI</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -21,30 +21,56 @@
         </button>
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
             <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="text-danger nav-link" href="#">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Team</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
             </ul>
+            <button type="button" class="btn btn-danger">get started</button>
+
         </div>
     </div>
 </nav>
 
 <!-- سکشن هدر -->
-<section class="header-section d-flex align-items-center justify-content-center text-center">
+<section class=" headerBG header-section d-flex align-items-center justify-content-center text-center">
     <div class="header-content container">
-        <h1 class="display-4 fw-bold mb-4">Welcome to Multi</h1>
-        <p class="lead mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-        <a href="#" class="btn btn-get-started btn-lg px-4">Get Started</a>
+        <h1 class="display-4 fw-bold mb-4">Welcome to Multi
+        </h1>
+        <p class="lead mb-4  ">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.        <button type="button" class="btn btn-danger btn-get-started btn-lg px-4">get started</button>
+
     </div>
 </section>
 
-<!-- اسکریپت Bootstrap -->
+<section id="about" class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- قسمت متن و لیست -->
+            <div class="col-md-6 mb-4 mb-md-0">
+                <h3 class="mb-3 text-uppercase text-muted">Learn More About Us</h3>
+                <h2 class="mb-4">ABOUT</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <ul class="list-unstyled mb-4">
+                    <li class="d-flex align-items-start mb-2">
+
+                        <div>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </li>
+                    <li class="d-flex align-items-start mb-2">
+
+                        <div>Duis aute irure dolor in reprehenderit in voluptate velit.</div>
+                    </li>
+                    <li class="d-flex align-items-start mb-2">
+
+
+                  <!-- اسکریپت Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
