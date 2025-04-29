@@ -1,0 +1,36 @@
+/* استایل برای سکشن هدر */
+.header-section {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+/* لایه تاریک پس‌زمینه */
+.header-section::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* محتوای داخل سکشن هدر */
+.header-content {
+    position: relative;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+/* استایل مخصوص منو (ناوبری) */
+.navbar {
+    padding: 15px 0;
+}
+
+/* استایل دکمه "Get Started" */
+.btn-get-started {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+}
+
