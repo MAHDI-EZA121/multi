@@ -29,13 +29,91 @@
 
 /* استایل دکمه "Get Started" */
 .btn-get-started {
-    background-color: #ff6f61;
+    background-color: #ed502e;
     color: #fff;
     border: none;
 }
-.headerBG{
+.headerBG {
     background-image: url("img/header.jpg");
-
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* یا ارتفاع دلخواه، مثلا 100vh */
+    position: relative; /* برای قرار دادن لایه‌های داخلی */
+    overflow: hidden;
 }
 
+.headerBG .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* مقدار opacity و رنگ تیره دلخواه */
+    z-index: 1; /* زیر محتوای متن */
+}
+.header-section {
+    height: 450px; /* یا هر ارتفاع دلخواه */
+}
+.header-content {
+    position: relative; /* برای قرار گرفتن بالای لایه تیره */
+    z-index: 2; /* بالاتر از overlay */
+}
 
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* حذف فاصله زیر منو */
+}
+
+.check-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #ffc107; /* زرد */
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
+
+.check-icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 14px;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.icon-check {
+    font-size: 0.8rem; /* تغییر بده براساس نیازت */
+    color: #ffc107; /* رنگ زرد */
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* استایل برای دایره آیکن */
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+/* استایل برای کارت‌های بزرگ شدن هنگام هاور */
+.custom-card {
+    transition: transform 0.3s;
+}
+.custom-card:hover {
+    transform: scale(1.05);
+}
+
+/* استایل برای دایره آیکن */
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

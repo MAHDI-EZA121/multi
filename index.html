@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Multi Demo - Menu and Header</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- لینک به فایل CSS جداگانه -->
     <link rel="stylesheet" href="StyleCSS.css">
 </head>
 <body>
 
-<!-- سکشن منو -->
+<!-- about_navbar -->
 <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="#">MULTI</a>
+        <a class="h1 navbar-brand fw-bold" href="#">MULTI</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,49 +28,273 @@
                 <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Team</a></li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button type="button" class="btn nav-link  dropdown-toggle" data-bs-toggle="dropdown">
+                            Dropdown
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Dropdown 1</a></li>
+                            <li><a class="dropdown-item" href="#">Dropdown 2</a></li>
+                            <li><a class="dropdown-item" href="#">Dropdown 3</a></li>
+                            <li><a class="dropdown-item" href="#">Dropdown 4</a></li>
+                        </ul>
+                    </div>
+                </li>
                 <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
             </ul>
-            <button type="button" class="btn btn-danger">get started</button>
 
+            <button type="button" class="btn-get-started btn  ">get started</button>
         </div>
     </div>
 </nav>
 
-<!-- سکشن هدر -->
-<section class=" headerBG header-section d-flex align-items-center justify-content-center text-center">
-    <div class="header-content container">
-        <h1 class="display-4 fw-bold mb-4">Welcome to Multi
-        </h1>
-        <p class="lead mb-4  ">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.        <button type="button" class="btn btn-danger btn-get-started btn-lg px-4">get started</button>
-
+<!-- about_header -->
+<section class="headerBG header-section d-flex align-items-center justify-content-center text-center position-relative">
+    <div class="overlay"></div> <!-- لایه تیره -->
+    <div class="header-content container position-relative z-1">
+        <h1 class="display-4 fw-bold mb-4">Welcome to Multi</h1>
+        <p class="lead mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.</p>
+        <button type="button" class="btn btn-danger btn-get-started btn-lg px-4">get started</button>
     </div>
 </section>
 
-<section id="about" class="py-5">
-    <div class="container">
+<!-- about_section -->
+<section class="about-section d-flex align-items-center position-relative py-5">
+    <!-- پس‌زمینه و لایه تاریک -->
+    <div class="background-image"></div>
+    <div class="overlay"></div>
+
+    <div class="container position-relative z-1">
         <div class="row align-items-center">
-
-            <!-- قسمت متن و لیست -->
-            <div class="col-md-6 mb-4 mb-md-0">
-                <h3 class="mb-3 text-uppercase text-muted">Learn More About Us</h3>
-                <h2 class="mb-4">ABOUT</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <!-- سمت چپ: متن و دکمه -->
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h4 class="text-uppercase mb-3 text-muted small">About</h4>
+                <h2 class="mb-4 fw-bold" style="font-family: 'Open Sans', sans-serif;">Learn More About Us</h2>
+                <p class="mb-4" style="font-family: 'Open Sans', sans-serif;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.
                 </p>
-                <ul class="list-unstyled mb-4">
-                    <li class="d-flex align-items-start mb-2">
-
+                <ul class="list-unstyled mb-4" style="font-family: 'Open Sans', sans-serif;">
+                    <li class="d-flex align-items-center mb-3">
+                        <div class="icon-check text-warning me-3">✓</div>
                         <div>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </li>
-                    <li class="d-flex align-items-start mb-2">
-
+                    <li class="d-flex align-items-center mb-3">
+                        <div class="icon-check text-warning me-3">✓</div>
                         <div>Duis aute irure dolor in reprehenderit in voluptate velit.</div>
                     </li>
-                    <li class="d-flex align-items-start mb-2">
+                    <li class="d-flex align-items-center mb-3">
+                        <div class="icon-check text-warning me-3">✓</div>
+                        <div>Ullamco laboris nisi ut aliquip ex ea commodo.</div>
+                    </li>
+                </ul>
+            </div>
 
+            <!-- سمت راست: متن کامل -->
+            <div class="col-lg-6">
+                <p style="font-family: 'Open Sans', sans-serif; font-size: 16px;">
+                    Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <button type="button" class="btn-get-started btn  ">Read More</button>
 
-                  <!-- اسکریپت Bootstrap -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Continuation_about_section -->
+<section class="stats-section py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-4">
+            <!-- هر کاور -->
+            <div class="container py-5">
+                <div class="row text-center">
+                    <!-- آیتم ۱ -->
+                    <div class="col-md-3 mb-4">
+                        <div class="card shadow-sm py-4 rounded">
+                            <div class="mx-auto mb-3 icon-circle bg-warning d-flex align-items-center justify-content-center">
+                                <span class="display-6">😊</span>
+                            </div>
+                            <h3 class="mb-0">232</h3>
+                            <p class="text-muted">Happy Clients</p>
+                        </div>
+                    </div>
+                    <!-- آیتم ۲ -->
+                    <div class="col-md-3 mb-4">
+                        <div class="card shadow-sm py-4 rounded">
+                            <div class="mx-auto mb-3 icon-circle bg-warning d-flex align-items-center justify-content-center">
+                                <span class="display-6">📋</span>
+                            </div>
+                            <h3 class="mb-0">521</h3>
+                            <p class="text-muted">Projects</p>
+                        </div>
+                    </div>
+                    <!-- آیتم ۳ -->
+                    <div class="col-md-3 mb-4">
+                        <div class="card shadow-sm py-4 rounded">
+                            <div class="mx-auto mb-3 icon-circle bg-warning d-flex align-items-center justify-content-center">
+                                <span class="display-6">🎧</span>
+                            </div>
+                            <h3 class="mb-0">1463</h3>
+                            <p class="text-muted">Hours Of Support</p>
+                        </div>
+                    </div>
+                    <!-- آیتم ۴ -->
+                    <div class="col-md-3 mb-4">
+                        <div class="card shadow-sm py-4 rounded">
+                            <div class="mx-auto mb-3 icon-circle bg-warning d-flex align-items-center justify-content-center">
+                                <span class="display-6">👥</span>
+                            </div>
+                            <h3 class="mb-0">15</h3>
+                            <p class="text-muted">Hard Workers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قسمت متن های توی خط -->
+            <div class="row text-center text-md-start">
+                <div class="col-md-3 mb-4">
+                    <h5 class="section-title">Quasi eaque omnis</h5>
+                    <p class="section-desc">Eius non minus autem soluta ut ui labore omnis quisquam corrupti autem odit
+                        voluptas quos commodi magnam occaecati.</p>
+                    <ul class="list-unstyled mb-4" style="font-family: 'Open Sans', sans-serif;">
+                        <li class="d-flex align-items-center mb-3">
+                            <div class="icon-check text-warning me-3">✓</div>
+                            <div>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <div class="icon-check text-warning me-3">✓</div>
+                            <div>Duis aute irure dolor in reprehenderit in voluptate velit.</div>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <div class="icon-check text-warning me-3">✓</div>
+                            <div>Ullamco laboris nisi ut aliquip ex ea commodo.</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="section-title">Et nemo dolores consectetur</h5>
+                    <p class="section-desc">Ducimus ea quam et occaecati est. Tempora in soluta laborum voluptatem aut.
+                        Et sit soluta non repellat sed quia die plovers tradiora.</p>
+                    <ul class="list-unstyled mb-4" style="font-family: 'Open Sans', sans-serif;">
+                        <li class="d-flex align-items-center mb-3">
+                            <div class="icon-check text-warning me-3">✓</div>
+                            <div>Enim temporibus maiores eligendi.</div>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <div class="icon-check text-warning me-3">✓</div>
+                            <div>Ut maxime ut quibusdam quam qui.</div>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <div class="icon-check text-warning me-3">✓</div>
+                            <div>Officiis aspernatur in officiis.</div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="section-title">Stauge laboriosam modi</h5>
+                    <p class="section-desc">Velit eos error et dolor omnis voluptas nobis tenetur sed enim nihil vero
+                        qui suscipit ipsum at magni. Ipsa architecto consequatur aliquam.</p>
+
+                    <ul class="list-unstyled mb-4" style="font-family: 'Open Sans', sans-serif;">
+                        <li class="d-flex align-items-center mb-3">
+                            <div class="icon-check text-warning me-3">✓</div>
+                            <div>Quis voluptatem laboriosam numquam.</div>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <div class="icon-check text-warning me-3">✓</div>
+                            <div>Debitis eos est et corrupti.</div>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <div class="icon-check text-warning me-3">✓</div>
+                            <div>Veritatis qui reprehenderit quis.</div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="section-title">Dignissimos suscipit iste</h5>
+                    <p class="section-desc">Molestiae occaecati assumenda quia saepe</p>
+                    <ul class="list-unstyled mb-4" style="font-family: 'Open Sans', sans-serif;">
+                        <li class="d-flex align-items-center mb-3">
+                            <div class="icon-check text-warning me-3">✓</div>
+                            <div>Veritatis qui reprehenderit quis.</div>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <div class="icon-check text-warning me-3">✓</div>
+                            <div>Accusantium vel numquam sunt minus.</div>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <div class="icon-check text-warning me-3">✓</div>
+                            <div>Voluptatem pariatur est sationem.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- about_Services -->
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- اسکریپت Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
