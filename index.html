@@ -10,44 +10,59 @@
     <link rel="stylesheet" href="StyleCSS.css">
 </head>
 <body>
-<!-- modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+
+<!-- Modal - نمایش هنگام ورود -->
+<div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content p-4">
-            <div class="modal-header border-0 pb-0">
-                <h5 class="modal-title" id="loginModalLabel"> فرم ورود به سایت </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="بستن"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="welcomeModalLabel">به سایت MULTI خوش آمدید!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <!-- فرم ورود -->
-                <form id="loginForm">
-                    <div class="mb-3 text-center">
-                        <div class="d-flex justify-content-center mb-3">
-                            <a href="#" class="mx-2 fs-4"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="mx-2 fs-4"><i class="fab fa-twitter"></i></a>
-                        </div>
-                        <h5 class="text-center mb-3">ثبت نام نکرده‌ای؟ <br><a href="#">ثبت‌نام کن</a></h5>
-                    </div>
+                <p>از اینکه از سایت ما دیدن می‌کنید متشکریم. ما در خدمت شما هستیم.</p>
+                <div class="text-center">
+                    <img src="/api/placeholder/400/320" alt="placeholder" class="img-fluid rounded mb-3">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">بستن</button>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Modal برای لاگین -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">ورود به سایت</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
                     <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="نام کاربری" id="username" required>
+                        <label for="username" class="form-label">نام کاربری</label>
+                        <input type="text" class="form-control" id="username" placeholder="نام کاربری خود را وارد کنید">
                     </div>
                     <div class="mb-3">
-                        <input type="password" class="form-control" placeholder="کلمه عبور" id="password" required>
+                        <label for="password" class="form-label">رمز عبور</label>
+                        <input type="password" class="form-control" id="password" placeholder="رمز عبور خود را وارد کنید">
                     </div>
-
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="rememberMe" checked>
-                            <label class="form-check-label" for="rememberMe"> ما را به خاطر بسپار </label>
-                        </div>
-                        <a href="#">فراموشی پسورد</a>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">مرا به خاطر بسپار</label>
                     </div>
-
-                    <div class="d-grid">
+                    <div class="d-grid gap-2">
                         <button type="submit" class="btn btn-danger">ورود</button>
                     </div>
                 </form>
+                <div class="mt-3 text-center">
+                    <a href="#" class="text-decoration-none">فراموشی رمز عبور</a>
+                    <span class="mx-2">|</span>
+                    <a href="#" class="text-decoration-none">ثبت نام</a>
+                </div>
             </div>
         </div>
     </div>
@@ -71,22 +86,14 @@
                 <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Team</a></li>
                 <li class="nav-item">
-                    <div class="dropdown">
-                        <button type="button" class="btn nav-link  dropdown-toggle" data-bs-toggle="dropdown">
-                            Dropdown
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Dropdown 1</a></li>
-                            <li><a class="dropdown-item" href="#">Dropdown 2</a></li>
-                            <li><a class="dropdown-item" href="#">Dropdown 3</a></li>
-                            <li><a class="dropdown-item" href="#">Dropdown 4</a></li>
-                        </ul>
-                    </div>
+                    <button type="button" class="btn nav-link" >
+                        Dropdown
+                    </button>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
             </ul>
 
-            <button type="button" class="btn-get-started btn  ">get started</button>
+            <button type="button" class="btn-get-started btn" id="loginButton">Login</button>
         </div>
     </div>
 </nav>
@@ -296,7 +303,6 @@
             <h2 class="mb-4 fw-bold" style="font-family: 'Open Sans', sans-serif;">CHECK OUR SERVICES</h2>
         </div>
     </div>
-    </div>
 </section>
 <section class="d-flex justify-content-center px-4 ">
     <div class="row row-cols-1 row-cols-md-3 g-4 w-75 ">
@@ -384,35 +390,28 @@
             </div>
         </div>
     </div>
-
 </section>
-
-
 
 <!-- اسکریپت Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- افزودن Bootstrap JS (برای عملکرد modals) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- اگر خواستی، می‌تونی با JS فرم رو کنترل کنی -->
+<!-- اسکریپت سفارشی برای نمایش مودال در هنگام بارگذاری صفحه و عملکرد دکمه لاگین -->
 <script>
-    // مثال: وقتی فرم ارسال شد
-    document.getElementById('loginForm').onsubmit = function(e) {
-        e.preventDefault();
+    // نمایش مودال در هنگام بارگذاری صفحه
+    document.addEventListener('DOMContentLoaded', function() {
+        // ایجاد تأخیر 1 ثانیه‌ای برای نمایش مودال
+        setTimeout(function() {
+            var welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+            welcomeModal.show();
+        }, 1000);
 
-        // اینجا می‌تونی عملیات لاگین رو انجام بده، مثلاً با Ajax یا بررسی داخل فرم
-
-        // فرض کن کاربر وارد شده
-        alert('شما وارد شدید');
-        // modal رو ببند
-        var modalEl = document.getElementById('loginModal');
-        var modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
-        modal.hide();
-
-        // حالا می‌تونی صفحه رو بر اساس لاگین تغییر بدی یا نمایش بده
-    };
+        // اضافه کردن عملکرد به دکمه لاگین
+        document.getElementById('loginButton').addEventListener('click', function() {
+            var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+            loginModal.show();
+        });
+    });
+</script>
 
 </body>
-
 </html>
