@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پنل کاربری | ماشین حساب</title>
+    <title>پنل کاربری | فرم اطلاعات</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="usercss.css">
 </head>
@@ -25,7 +25,7 @@
         <div class="col-md-8">
             <div class="card border-0 shadow mb-4">
                 <div class="card-body">
-                    <h4 class="card-title text-center mb-4">خوش آمدید  !</h4>
+                    <h4 class="card-title text-center mb-4">خوش آمدید !</h4>
                     <p class="text-center">شما با موفقیت وارد پنل کاربری شده‌اید.</p>
                 </div>
             </div>
@@ -34,145 +34,248 @@
 
     <section class="row justify-content-center">
         <div class="col-md-8">
-            <div class="calculator-container">
-                <div class="calculator-display" id="result">نتیجه: 0</div>
+            <div class="user-info-container">
+                <h4 class="text-center mb-4">فرم اطلاعات کاربری</h4>
+                <p class="text-center mb-4">لطفاً اطلاعات خود را با دقت وارد کنید</p>
 
-                <div class="calculator-inputs">
-                    <div class="input-container">
-                        <div class="input-label">عدد اول</div>
-                        <label for="firstNumber"></label>
-                        <input type="number" class="calculator-input" id="firstNumber" placeholder="عدد اول">
+                <form id="userInfoForm" class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName" class="form-label">نام</label>
+                            <input type="text" class="form-control" id="firstName" required>
+                            <div class="invalid-feedback">
+                                لطفاً نام خود را وارد کنید
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastName" class="form-label">نام خانوادگی</label>
+                            <input type="text" class="form-control" id="lastName" required>
+                            <div class="invalid-feedback">
+                                لطفاً نام خانوادگی خود را وارد کنید
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="input-container">
-                        <div class="input-label">عملیات</div>
-                        <label for="operation"></label>
-                        <select class="calculator-input" id="operation">
-                            <option value="+">+</option>
-                            <option value="-">-</option>
-                            <option value="*">×</option>
-                            <option value="/">÷</option>
-                            <option value="%">%</option>
-                            <option value="^">^</option>
+                    <div class="mb-3">
+                        <label for="nationalCode" class="form-label">کد ملی</label>
+                        <input type="text" class="form-control" id="nationalCode" required>
+                        <div class="invalid-feedback">
+                            کد ملی خود را وارد کنید
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="birthDate" class="form-label">تاریخ تولد</label>
+                        <input type="date" class="form-control" id="birthDate" required>
+                        <div class="invalid-feedback">
+                            تاریخ تولد خود را وارد کنید
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phoneNumber" class="form-label">شماره تلفن همراه</label>
+                        <input type="tel" class="form-control" id="phoneNumber" required>
+                        <div class="invalid-feedback">
+                            شماره تلفن همراه خود را وارد کنید
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">آدرس ایمیل</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">
+                            آدرس ایمیل معتبر وارد کنید
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="education" class="form-label">میزان تحصیلات</label>
+                        <select class="form-select" id="education" required>
+                            <option value="" selected disabled>انتخاب کنید</option>
+                            <option value="diploma">دیپلم</option>
+                            <option value="bachelor">کارشناسی</option>
+                            <option value="master">کارشناسی ارشد</option>
+                            <option value="phd">دکتری</option>
                         </select>
+                        <div class="invalid-feedback">
+                            میزان تحصیلات خود را انتخاب کنید
+                        </div>
                     </div>
 
-                    <div class="input-container">
-                        <div class="input-label">عدد دوم</div>
-                        <label for="secondNumber"></label>
-                        <input type="number" class="calculator-input" id="secondNumber" placeholder="عدد دوم">
+                    <div class="mb-3">
+                        <label for="jobTitle" class="form-label">عنوان شغلی</label>
+                        <input type="text" class="form-control" id="jobTitle" required>
+                        <div class="invalid-feedback">
+                            عنوان شغلی خود را وارد کنید
+                        </div>
                     </div>
-                </div>
 
-                <div class="calculator-buttons">
-                    <button class="calc-button" id="calculate">محاسبه</button>
-                    <button class="calc-button" id="reset">پاک کردن</button>
-                </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">آدرس</label>
+                        <textarea class="form-control" id="address" rows="3" required></textarea>
+                        <div class="invalid-feedback">
+                            آدرس خود را وارد کنید
+                        </div>
+                    </div>
 
-                <div class="result-history">
-                    <h5 class="text-center mb-3">تاریخچه محاسبات</h5>
-                    <div id="history-list"></div>
-                </div>
+                    <div class="mb-3">
+                        <label for="postalCode" class="form-label">کد پستی</label>
+                        <input type="text" class="form-control" id="postalCode" required>
+                        <div class="invalid-feedback">
+                            کد پستی خود را وارد کنید
+                        </div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="form-button" id="submitBtn">ثبت اطلاعات</button>
+                        <button type="reset" class="form-button" id="resetBtn">پاک کردن</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">پیام سیستم</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="success-icon mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#28a745" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                        </svg>
+                    </div>
+                    <h4>اطلاعات با موفقیت ثبت شد</h4>
+                    <p>از ثبت اطلاعات شما متشکریم.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="closeModalBtn" data-bs-dismiss="modal">بستن</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- script -->
 <script>
-     const resultDisplay = document.getElementById('result');
-    const firstNumberInput = document.getElementById('firstNumber');
-    const secondNumberInput = document.getElementById('secondNumber');
-    const operationSelect = document.getElementById('operation');
-    const calculateButton = document.getElementById('calculate');
-    const resetButton = document.getElementById('reset');
-    const historyList = document.getElementById('history-list');
+    // Form validation
+    const form = document.getElementById('userInfoForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+    const closeModalBtn = document.getElementById('closeModalBtn');
 
-     let calculationHistory = [];
+    // Load saved form data if available
+    window.addEventListener('DOMContentLoaded', function() {
+        loadFormData();
+    });
 
-     function calculate() {
-        const num1 = parseFloat(firstNumberInput.value);
-        const num2 = parseFloat(secondNumberInput.value);
-        const operation = operationSelect.value;
+    // Form validation
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
 
-         if (isNaN(num1) || isNaN(num2)) {
-            resultDisplay.textContent = 'لطفاً هر دو عدد را وارد کنید';
-            return;
+        if (!form.checkValidity()) {
+            event.stopPropagation();
+            highlightEmptyFields();
+        } else {
+            // Save form data to localStorage
+            saveFormData();
+
+            // Form is valid, show success modal
+            successModal.show();
+
+            // Add event listener to refresh page when modal is closed
+            document.getElementById('closeModalBtn').addEventListener('click', function() {
+                location.reload();
+            });
+
+            // Also refresh when modal is dismissed by clicking outside or pressing ESC
+            document.getElementById('successModal').addEventListener('hidden.bs.modal', function () {
+                location.reload();
+            });
         }
 
-        let result;
-        let operationSymbol = operation;
+        form.classList.add('was-validated');
+    });
 
-         switch (operation) {
-            case '+':
-                result = num1 + num2;
-                break;
-            case '-':
-                result = num1 - num2;
-                break;
-            case '*':
-                result = num1 * num2;
-                operationSymbol = '×';
-                break;
-            case '/':
-                if (num2 === 0) {
-                    resultDisplay.textContent = 'خطا: تقسیم بر صفر!';
-                    return;
-                }
-                result = num1 / num2;
-                operationSymbol = '÷';
-                break;
-            case '%':
-                result = num1 % num2;
-                break;
-            case '^':
-                result = Math.pow(num1, num2);
-                break;
-            default:
-                resultDisplay.textContent = 'عملیات نامعتبر';
-                return;
-        }
+    // Reset button - clear form and localStorage
+    resetBtn.addEventListener('click', function() {
+        form.classList.remove('was-validated');
+        // Remove any custom styling
+        const inputs = form.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.style.borderColor = '';
+        });
 
-         const formattedResult = Number.isInteger(result) ? result : parseFloat(result.toFixed(6));
-        resultDisplay.textContent = `نتیجه: ${formattedResult}`;
+        // Clear localStorage
+        localStorage.removeItem('userFormData');
+    });
 
-         const calculationText = `${num1} ${operationSymbol} ${num2} = ${formattedResult}`;
-        calculationHistory.unshift(calculationText);
-
-         if (calculationHistory.length > 10) {
-            calculationHistory.pop();
-        }
-
-         updateHistoryDisplay();
-    }
-
-     function reset() {
-        firstNumberInput.value = '';
-        secondNumberInput.value = '';
-        operationSelect.value = '+';
-        resultDisplay.textContent = 'نتیجه: 0';
-    }
-
-     function updateHistoryDisplay() {
-        historyList.innerHTML = '';
-        calculationHistory.forEach(item => {
-            const historyItem = document.createElement('div');
-            historyItem.className = 'history-item';
-            historyItem.textContent = item;
-            historyList.appendChild(historyItem);
+    // Function to highlight empty fields
+    function highlightEmptyFields() {
+        const inputs = form.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                input.style.borderColor = '#dc3545';
+            } else {
+                input.style.borderColor = '';
+            }
         });
     }
 
-     calculateButton.addEventListener('click', calculate);
-    resetButton.addEventListener('click', reset);
-
-     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-            calculate();
-        }
+    // Remove red border when user starts typing
+    form.querySelectorAll('input, select, textarea').forEach(input => {
+        input.addEventListener('input', function() {
+            if (this.value.trim()) {
+                this.style.borderColor = '';
+            }
+        });
     });
+
+    // Function to save form data to localStorage
+    function saveFormData() {
+        const formData = {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            nationalCode: document.getElementById('nationalCode').value,
+            birthDate: document.getElementById('birthDate').value,
+            phoneNumber: document.getElementById('phoneNumber').value,
+            email: document.getElementById('email').value,
+            education: document.getElementById('education').value,
+            jobTitle: document.getElementById('jobTitle').value,
+            address: document.getElementById('address').value,
+            postalCode: document.getElementById('postalCode').value
+        };
+
+        localStorage.setItem('userFormData', JSON.stringify(formData));
+    }
+
+    // Function to load form data from localStorage
+    function loadFormData() {
+        const savedData = localStorage.getItem('userFormData');
+
+        if (savedData) {
+            const formData = JSON.parse(savedData);
+
+            // Fill form fields with saved data
+            document.getElementById('firstName').value = formData.firstName || '';
+            document.getElementById('lastName').value = formData.lastName || '';
+            document.getElementById('nationalCode').value = formData.nationalCode || '';
+            document.getElementById('birthDate').value = formData.birthDate || '';
+            document.getElementById('phoneNumber').value = formData.phoneNumber || '';
+            document.getElementById('email').value = formData.email || '';
+            document.getElementById('education').value = formData.education || '';
+            document.getElementById('jobTitle').value = formData.jobTitle || '';
+            document.getElementById('address').value = formData.address || '';
+            document.getElementById('postalCode').value = formData.postalCode || '';
+        }
+    }
 </script>
 
 </body>
