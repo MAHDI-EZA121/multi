@@ -195,6 +195,7 @@
     transition: color 0.3s;
 }
 
+
 .modal a:hover {
     color: #d84525;
     text-decoration: underline !important;
