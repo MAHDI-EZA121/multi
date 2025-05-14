@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل کاربری | ماشین حساب</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="usercss.css">
+</head>
+<body>
+
+<!-- navbar -->
+<section class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">پنل کاربری | MULTI</a>
+        <div class="ms-auto">
+            <a href="index.html" class="btn logout-btn">خروج</a>
+        </div>
+    </div>
+</section>
+
+
+<section class="container mt-1 pt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card border-0 shadow mb-4">
+                <div class="card-body">
+                    <h4 class="card-title text-center mb-4">خوش آمدید  !</h4>
+                    <p class="text-center">شما با موفقیت وارد پنل کاربری شده‌اید.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="calculator-container">
+                <div class="calculator-display" id="result">نتیجه: 0</div>
+
+                <div class="calculator-inputs">
+                    <div class="input-container">
+                        <div class="input-label">عدد اول</div>
+                        <label for="firstNumber"></label>
+                        <input type="number" class="calculator-input" id="firstNumber" placeholder="عدد اول">
+                    </div>
+
+                    <div class="input-container">
+                        <div class="input-label">عملیات</div>
+                        <label for="operation"></label>
+                        <select class="calculator-input" id="operation">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                            <option value="*">×</option>
+                            <option value="/">÷</option>
+                            <option value="%">%</option>
+                            <option value="^">^</option>
+                        </select>
+                    </div>
+
+                    <div class="input-container">
+                        <div class="input-label">عدد دوم</div>
+                        <label for="secondNumber"></label>
+                        <input type="number" class="calculator-input" id="secondNumber" placeholder="عدد دوم">
+                    </div>
+                </div>
+
+                <div class="calculator-buttons">
+                    <button class="calc-button" id="calculate">محاسبه</button>
+                    <button class="calc-button" id="reset">پاک کردن</button>
+                </div>
+
+                <div class="result-history">
+                    <h5 class="text-center mb-3">تاریخچه محاسبات</h5>
+                    <div id="history-list"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- script -->
+<script>
+     const resultDisplay = document.getElementById('result');
+    const firstNumberInput = document.getElementById('firstNumber');
+    const secondNumberInput = document.getElementById('secondNumber');
+    const operationSelect = document.getElementById('operation');
+    const calculateButton = document.getElementById('calculate');
+    const resetButton = document.getElementById('reset');
+    const historyList = document.getElementById('history-list');
+
+     let calculationHistory = [];
+
+     function calculate() {
+        const num1 = parseFloat(firstNumberInput.value);
+        const num2 = parseFloat(secondNumberInput.value);
+        const operation = operationSelect.value;
+
+         if (isNaN(num1) || isNaN(num2)) {
+            resultDisplay.textContent = 'لطفاً هر دو عدد را وارد کنید';
+            return;
+        }
+
+        let result;
+        let operationSymbol = operation;
+
+         switch (operation) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                operationSymbol = '×';
+                break;
+            case '/':
+                if (num2 === 0) {
+                    resultDisplay.textContent = 'خطا: تقسیم بر صفر!';
+                    return;
+                }
+                result = num1 / num2;
+                operationSymbol = '÷';
+                break;
+            case '%':
+                result = num1 % num2;
+                break;
+            case '^':
+                result = Math.pow(num1, num2);
+                break;
+            default:
+                resultDisplay.textContent = 'عملیات نامعتبر';
+                return;
+        }
+
+         const formattedResult = Number.isInteger(result) ? result : parseFloat(result.toFixed(6));
+        resultDisplay.textContent = `نتیجه: ${formattedResult}`;
+
+         const calculationText = `${num1} ${operationSymbol} ${num2} = ${formattedResult}`;
+        calculationHistory.unshift(calculationText);
+
+         if (calculationHistory.length > 10) {
+            calculationHistory.pop();
+        }
+
+         updateHistoryDisplay();
+    }
+
+     function reset() {
+        firstNumberInput.value = '';
+        secondNumberInput.value = '';
+        operationSelect.value = '+';
+        resultDisplay.textContent = 'نتیجه: 0';
+    }
+
+     function updateHistoryDisplay() {
+        historyList.innerHTML = '';
+        calculationHistory.forEach(item => {
+            const historyItem = document.createElement('div');
+            historyItem.className = 'history-item';
+            historyItem.textContent = item;
+            historyList.appendChild(historyItem);
+        });
+    }
+
+     calculateButton.addEventListener('click', calculate);
+    resetButton.addEventListener('click', reset);
+
+     document.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            calculate();
+        }
+    });
+</script>
+</body>
+</html>
