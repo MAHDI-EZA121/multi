@@ -59,6 +59,8 @@ body {
 
 .navbar {
     background-color: #ed502e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .navbar-brand {
